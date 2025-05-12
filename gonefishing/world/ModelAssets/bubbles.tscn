@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5fve5is00v3v"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y7mfr"]
+emission_shape = 1
+emission_sphere_radius = 1.5
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = -1.60933e-05
+gravity = Vector3(2, 2, 0)
+
+[sub_resource type="SphereMesh" id="SphereMesh_2gy3d"]
+
+[node name="Bubbles" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 24
+lifetime = 3.45
+process_material = SubResource("ParticleProcessMaterial_y7mfr")
+draw_pass_1 = SubResource("SphereMesh_2gy3d")

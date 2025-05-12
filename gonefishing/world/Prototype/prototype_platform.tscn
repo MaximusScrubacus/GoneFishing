@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8a8usk5nwtjm"]
+
+[ext_resource type="Texture2D" uid="uid://cifxa0qoe81ox" path="res://image/texture_04.png" id="1_c5x55"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_er17k"]
+albedo_texture = ExtResource("1_c5x55")
+
+[node name="Prototype" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(20, 1, 5)
+material = SubResource("StandardMaterial3D_er17k")

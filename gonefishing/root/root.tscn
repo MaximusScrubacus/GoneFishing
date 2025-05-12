@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://crmd1airpv3d4"]
+
+[ext_resource type="PackedScene" uid="uid://8ahf676ucjig" path="res://world/Prototype/ProtoType_player.tscn" id="1_1xv2g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8fnrc"]
+albedo_color = Color(1, 0.341176, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lya30"]
+albedo_color = Color(1, 1, 0, 1)
+
+[node name="Root" type="Node"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." groups=["Water"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0294952, -7.62939e-06, 0.298187)
+use_collision = true
+collision_layer = 5
+size = Vector3(50, 1, 50)
+material = SubResource("StandardMaterial3D_8fnrc")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D" groups=["Water"]]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.114838, -24.1531, 25.7394)
+use_collision = true
+collision_layer = 5
+size = Vector3(50, 3.07618, 49.6431)
+material = SubResource("StandardMaterial3D_8fnrc")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D" groups=["Water"]]
+transform = Transform3D(1, 0, 0, 0, -0.0543228, 0.998523, 0, -0.998523, -0.0543228, 0.0527172, 0.0531826, -24.999)
+use_collision = true
+size = Vector3(50, 1, 50)
+material = SubResource("StandardMaterial3D_lya30")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D" groups=["Water"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0294952, -12.4353, 50.0632)
+use_collision = true
+collision_layer = 5
+size = Vector3(50, 0.001, 49.6431)
+material = SubResource("StandardMaterial3D_8fnrc")
+
+[node name="Player" parent="." instance=ExtResource("1_1xv2g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.333406, 1.5, 0.91831)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
