@@ -7,7 +7,7 @@ subdivide_width = 1
 subdivide_depth = 1
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_olc7i"]
-render_priority = 0
+render_priority = 1
 shader = ExtResource("1_xyhqs")
 shader_parameter/ColorParameter = Color(0.27451, 0.33611, 0.948052, 1)
 shader_parameter/Alpha_Value = 0.8

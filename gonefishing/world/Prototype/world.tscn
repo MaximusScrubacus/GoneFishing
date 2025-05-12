@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d02qrtsc75m7a"]
+[gd_scene load_steps=9 format=3 uid="uid://d02qrtsc75m7a"]
 
 [ext_resource type="PackedScene" uid="uid://cwyw3qaaoqtoy" path="res://world/ModelAssets/the_lagoon.tscn" id="4_036b0"]
 [ext_resource type="PackedScene" uid="uid://c5pttno7pgvvj" path="res://world/WaterPlanes/water_plane.tscn" id="4_aqk2v"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cme66mgamppim" path="res://world/Main_Character/NEW.tscn" id="5_036b0"]
 [ext_resource type="PackedScene" uid="uid://bhq8e4dc18f8y" path="res://world/ModelAssets/submarine.tscn" id="5_dwbse"]
 [ext_resource type="PackedScene" uid="uid://d1bxwp62vpwqf" path="res://world/ModelAssets/cat.tscn" id="6_obak1"]
+[ext_resource type="PackedScene" uid="uid://cu38ldrebb7ss" path="res://palm_tree.tscn" id="7_1f5f8"]
+[ext_resource type="PackedScene" uid="uid://bjk4vlrn1dm42" path="res://Dingy.tscn" id="8_t2wo2"]
 
 [node name="World" type="Node3D"]
 
@@ -24,3 +26,12 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.70
 
 [node name="Cat" parent="." instance=ExtResource("6_obak1")]
 transform = Transform3D(1.5, 0, 0, 0, 1.46463, -0.323841, 0, 0.323841, 1.46463, 1, 4, -5)
+
+[node name="PalmTree" parent="." instance=ExtResource("7_1f5f8")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -9.40644, 0.143617, 3.64298)
+
+[node name="PalmTree2" parent="." instance=ExtResource("7_1f5f8")]
+transform = Transform3D(0.107598, 0, 0.488285, 0, 0.5, 0, -0.488285, 0, 0.107598, 10.0019, -0.288697, 3.64298)
+
+[node name="Dingy" parent="." instance=ExtResource("8_t2wo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1395, 0.287056, 1.41588)
