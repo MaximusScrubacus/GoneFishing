@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmvyyo1lwvpwj"]
+
+[ext_resource type="PackedScene" uid="uid://nhd71f5c6mmf" path="res://world/ModelAssets/Cove_Test.glb" id="1_v8new"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Cove_Test" parent="." instance=ExtResource("1_v8new")]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://bss6a2gywpg57"]
+
+[ext_resource type="PackedScene" uid="uid://erb33hsw1yvh" path="res://world/Main_Character/Sasha.glb" id="1_57kdb"]
+
+[node name="Sasha" instance=ExtResource("1_57kdb")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/1/position = Vector3(-0.000369105, 0.569401, 0.00962128)
+bones/1/rotation = Quaternion(0.0640626, -0.00265741, -0.00618805, 0.997923)
+bones/4/rotation = Quaternion(-0.332668, 0.287187, -0.864097, 0.245342)
+bones/5/rotation = Quaternion(0.370248, 0.00623846, -0.192393, 0.90877)
+bones/6/rotation = Quaternion(0.581615, 0.466515, 0.240447, 0.621509)
+bones/7/rotation = Quaternion(-0.191794, -0.0450802, 0.95084, 0.238929)
+bones/8/rotation = Quaternion(0.392541, -0.00503767, 0.112796, 0.912778)
+bones/9/rotation = Quaternion(0.15653, -0.29019, -0.0710077, 0.941406)
+bones/10/rotation = Quaternion(0.614233, -0.348094, -0.613696, 0.353448)
+bones/11/rotation = Quaternion(-0.00993367, 0.00100603, -0.675525, 0.737269)
+bones/12/rotation = Quaternion(0.0115775, 0.00727736, 0.638667, 0.769362)
+bones/13/rotation = Quaternion(0.704864, 0.0964776, 0.697542, 0.0854054)
+bones/14/rotation = Quaternion(-0.000660766, -0.000426835, 0.195991, 0.980605)
+bones/15/rotation = Quaternion(-0.00272563, 0.00232236, -0.79427, 0.607554)
+bones/16/position = Vector3(0.116015, 0.224638, 0.0416506)
+bones/16/rotation = Quaternion(0.654479, -0.28404, -0.644702, 0.274479)
+bones/18/position = Vector3(0.33174, 0.686997, -0.113209)
+bones/18/rotation = Quaternion(0.384089, -0.441417, -0.625079, 0.516626)
+bones/20/position = Vector3(-0.115075, 0.121649, -0.0395729)
+bones/22/position = Vector3(-0.382816, 0.670749, 0.108651)
+bones/22/rotation = Quaternion(0.21505, 0.359766, 0.838417, 0.348394)
+
+[node name="AnimationPlayer" parent="." index="7"]
+autoplay = "Walk"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bhq8e4dc18f8y"]
+[gd_scene load_steps=19 format=4 uid="uid://bhq8e4dc18f8y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mmsoc"]
 resource_name = "Base"
@@ -181,6 +181,20 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_c8dg6")
 
+[sub_resource type="Curve" id="Curve_epwpv"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.312796, 0.730337), 0.0, 0.0, 0, 0, Vector2(0.492891, 0.224719), 0.0, 0.0, 0, 0, Vector2(1, 0.0561798), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_1dx34"]
+curve = SubResource("Curve_epwpv")
+
+[sub_resource type="Curve" id="Curve_gower"]
+_data = [Vector2(0, 0.573034), 0.0, 0.0, 0, 0, Vector2(0.227488, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.438202), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_s4t2m"]
+curve = SubResource("Curve_gower")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_epwpv"]
 emission_shape = 1
 emission_sphere_radius = 1.5
@@ -189,8 +203,16 @@ angle_max = 1.07288e-05
 angular_velocity_min = -1.60933e-05
 angular_velocity_max = -1.60933e-05
 gravity = Vector3(0, 2, -3)
+scale_min = 0.1
+scale_curve = SubResource("CurveTexture_s4t2m")
+alpha_curve = SubResource("CurveTexture_1dx34")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0s5rj"]
+transparency = 1
+vertex_color_use_as_albedo = true
 
 [sub_resource type="SphereMesh" id="SphereMesh_2gy3d"]
+material = SubResource("StandardMaterial3D_0s5rj")
 
 [sub_resource type="Animation" id="Animation_1dx34"]
 length = 60.0
@@ -294,7 +316,7 @@ visible = false
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Submarine/Bubbles"]
 amount = 24
-lifetime = 3.45
+lifetime = 1.5
 process_material = SubResource("ParticleProcessMaterial_epwpv")
 draw_pass_1 = SubResource("SphereMesh_2gy3d")
 

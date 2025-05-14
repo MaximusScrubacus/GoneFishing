@@ -6,32 +6,32 @@
 [ext_resource type="PackedScene" uid="uid://cme66mgamppim" path="res://world/Main_Character/NEW.tscn" id="5_036b0"]
 [ext_resource type="PackedScene" uid="uid://bhq8e4dc18f8y" path="res://world/ModelAssets/submarine.tscn" id="5_dwbse"]
 [ext_resource type="PackedScene" uid="uid://d1bxwp62vpwqf" path="res://world/ModelAssets/cat.tscn" id="6_obak1"]
-[ext_resource type="PackedScene" uid="uid://cu38ldrebb7ss" path="res://palm_tree.tscn" id="7_1f5f8"]
-[ext_resource type="PackedScene" uid="uid://bjk4vlrn1dm42" path="res://Dingy.tscn" id="8_t2wo2"]
+[ext_resource type="PackedScene" uid="uid://cu38ldrebb7ss" path="res://world/ModelAssets/palm_tree.tscn" id="7_1f5f8"]
+[ext_resource type="PackedScene" uid="uid://bjk4vlrn1dm42" path="res://world/ModelAssets/Dingy.tscn" id="8_t2wo2"]
 
 [node name="World" type="Node3D"]
 
 [node name="WaterPlane" parent="." groups=["Water"] instance=ExtResource("4_aqk2v")]
-transform = Transform3D(100, 0, 0, 0, 1.22, 0, 0, 0, 161.62, 0, 0.0549258, 0.0743566)
+transform = Transform3D(100, 0, 0, 0, 1.22, 0, 0, 0, 161.62, 0, 0.0455446, 0.0743566)
 
 [node name="TheLagoon" parent="." instance=ExtResource("4_036b0")]
 
 [node name="Day_Night" parent="." instance=ExtResource("4_dwbse")]
 
 [node name="Player2" parent="." instance=ExtResource("5_036b0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.929086, 1, 1.04454)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.929086, 0.302956, 1.35368)
 
 [node name="Submarine" parent="." instance=ExtResource("5_dwbse")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.7094, -2.63572, 86.2494)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.7094, -2.33436, 76.5072)
 
 [node name="Cat" parent="." instance=ExtResource("6_obak1")]
 transform = Transform3D(1.5, 0, 0, 0, 1.46463, -0.323841, 0, 0.323841, 1.46463, 1, 4, -5)
 
 [node name="PalmTree" parent="." instance=ExtResource("7_1f5f8")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -9.40644, 0.143617, 3.64298)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -6.83777, -0.558038, 4.31642)
 
 [node name="PalmTree2" parent="." instance=ExtResource("7_1f5f8")]
-transform = Transform3D(0.107598, 0, 0.488285, 0, 0.5, 0, -0.488285, 0, 0.107598, 10.0019, -0.288697, 3.64298)
+transform = Transform3D(0.107598, 0, 0.488285, 0, 0.5, 0, -0.488285, 0, 0.107598, 8.54096, -0.432125, 3.64298)
 
 [node name="Dingy" parent="." instance=ExtResource("8_t2wo2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1395, 0.287056, 1.41588)

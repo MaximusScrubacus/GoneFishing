@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://spghpaea0o2q"
-path.s3tc="res://.godot/imported/AnimalCrossing3_Head Base Color.png-15d7210f599783943cb70325370bcf84.s3tc.ctex"
+uid="uid://c2psjv2eeb7pr"
+path.s3tc="res://.godot/imported/Sasha_Head Base Color.png-9cd04e35c0391bb8c37bdeb59282613b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://world/Main_Character/AnimalCrossing3_Head Base Color.png"
-dest_files=["res://.godot/imported/AnimalCrossing3_Head Base Color.png-15d7210f599783943cb70325370bcf84.s3tc.ctex"]
+source_file="res://world/Main_Character/Sasha_Head Base Color.png"
+dest_files=["res://.godot/imported/Sasha_Head Base Color.png-9cd04e35c0391bb8c37bdeb59282613b.s3tc.ctex"]
 
 [params]
 
