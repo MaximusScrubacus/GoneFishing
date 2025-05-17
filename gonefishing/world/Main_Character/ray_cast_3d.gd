@@ -8,17 +8,19 @@ extends RayCast3D
 var Cast = true
 var is_fishing = false	
 var bobber_withdrawn = false
-
+var can_fish = true	
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact"):
+	if event.is_action_pressed("interact") && can_fish:
 		bobber.global_position = get_collision_point()
 		bobber.visible = true
 		is_fishing = true
 		bobber_withdrawn = false
+		can_fish = false
 	if event.is_action_pressed("left-click") && is_fishing:
 		bobber.global_position = rod_tip.global_position
 		is_fishing = false
 		bobber_withdrawn = true
+		can_fish = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

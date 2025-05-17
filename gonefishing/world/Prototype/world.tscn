@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bjk4vlrn1dm42" path="res://world/ModelAssets/Dingy.tscn" id="8_t2wo2"]
 [ext_resource type="Script" uid="uid://rq36jkgxh60r" path="res://world/Prototype/area_3d.gd" id="9_6lbr1"]
 [ext_resource type="PackedScene" uid="uid://cy5vwn12faahv" path="res://manta_ray.tscn" id="10_ecg4m"]
-[ext_resource type="PackedScene" uid="uid://bxfh4keg6xsl5" path="res://Perch.glb" id="12_g7hog"]
+[ext_resource type="PackedScene" uid="uid://jns4jr6exgx3" path="res://perch.tscn" id="12_g7hog"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t2wo2"]
 size = Vector3(33.905, 7.2832, 22.7485)
@@ -56,7 +56,7 @@ shape = SubResource("BoxShape3D_t2wo2")
 transform = Transform3D(0.99472, 0, -0.102372, 0, 1, 0, 0.102372, 0, 0.99472, -7.62368, -4.76838e-07, 36.0998)
 
 [node name="Perch" parent="." instance=ExtResource("12_g7hog")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -0.0548002, 14.41)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24062, 0, 13.4991)
 
 [connection signal="area_entered" from="Area3D" to="Area3D" method="_on_area_entered"]
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
