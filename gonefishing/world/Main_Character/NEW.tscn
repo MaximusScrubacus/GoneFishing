@@ -1,9 +1,10 @@
-[gd_scene load_steps=32 format=4 uid="uid://cme66mgamppim"]
+[gd_scene load_steps=33 format=4 uid="uid://cme66mgamppim"]
 
 [ext_resource type="Script" uid="uid://bty2da7no3dnj" path="res://world/Main_Character/character_body_3d.gd" id="1_kt5ol"]
 [ext_resource type="Script" uid="uid://s61cr3sfdhqb" path="res://world/Main_Character/spring_arm_3d.gd" id="3_o36s8"]
 [ext_resource type="Script" uid="uid://cqwbh612y3fwj" path="res://world/Main_Character/ray_cast_3d.gd" id="4_r725l"]
 [ext_resource type="Texture2D" uid="uid://dhgbc48lbrb7n" path="res://image/texture_02.png" id="5_r2hhm"]
+[ext_resource type="PackedScene" uid="uid://dp1i15g82l0by" path="res://state_machine.tscn" id="6_jrmnd"]
 [ext_resource type="Texture2D" uid="uid://c2psjv2eeb7pr" path="res://world/Main_Character/Sasha_Head Base Color.png" id="9_ngrg3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
@@ -1275,3 +1276,14 @@ unique_name_in_owner = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Bobber"]
 mesh = SubResource("SphereMesh_hqtel")
+
+[node name="State_Machine" parent="." instance=ExtResource("6_jrmnd")]
+
+[node name="Idle" parent="State_Machine" index="0" node_paths=PackedStringArray("animation_player")]
+animation_player = NodePath("../../CharacterBody3D/Sasha/AnimationPlayer")
+
+[node name="Moving" parent="State_Machine" index="1" node_paths=PackedStringArray("animation_player", "player")]
+animation_player = NodePath("../../CharacterBody3D/Sasha/AnimationPlayer")
+player = NodePath("../../CharacterBody3D")
+
+[editable path="State_Machine"]
