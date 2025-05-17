@@ -1,9 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://8ahf676ucjig"]
+[gd_scene load_steps=12 format=3 uid="uid://8ahf676ucjig"]
 
-[ext_resource type="Script" uid="uid://bty2da7no3dnj" path="res://world/Main_Character/character_body_3d.gd" id="1_lpije"]
+[ext_resource type="Script" uid="uid://b0pdnout4e1rr" path="res://world/Prototype/ProtoPlayer.gd" id="1_hbnwm"]
 [ext_resource type="Material" uid="uid://bb43ngplsfis2" path="res://addons/flexible_toon_shader/FlexibleToonMaterial.tres" id="2_x32ct"]
 [ext_resource type="Script" uid="uid://s61cr3sfdhqb" path="res://world/Main_Character/spring_arm_3d.gd" id="3_smxks"]
-[ext_resource type="Script" uid="uid://cqwbh612y3fwj" path="res://world/Main_Character/ray_cast_3d.gd" id="4_ugqnn"]
 [ext_resource type="Texture2D" uid="uid://dhgbc48lbrb7n" path="res://image/texture_02.png" id="5_pjniq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
@@ -61,7 +60,7 @@ _data = {
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-script = ExtResource("1_lpije")
+script = ExtResource("1_hbnwm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 shape = SubResource("CapsuleShape3D_onrkg")
@@ -89,7 +88,6 @@ target_position = Vector3(0, -10, 0)
 collision_mask = 4
 collide_with_areas = true
 debug_shape_custom_color = Color(1, 1, 1, 1)
-script = ExtResource("4_ugqnn")
 
 [node name="RangeIndicator" type="Sprite3D" parent="CharacterBody3D/Head/FishingCast"]
 transform = Transform3D(0.0743596, 0, 0, 0, 0.0743596, 0, 0, 0, 0.0743596, 0, 0, 0)

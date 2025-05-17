@@ -4,14 +4,25 @@ extends RayCast3D
 @onready var rod_tip: Node3D = $"../../Sasha/Armature/Skeleton3D/RodHolder/RodTip"
 @onready var bobber: Node3D = $"../../../Bobber"
 @onready var range_indicator: Sprite3D = $RangeIndicator
-@onready var skin_player: AnimationPlayer = $"../../AnimalCrossing3/AnimationPlayer"
+
 
 var Cast = true
+var is_fishing = false	
+var bobber_withdrawn = false
+var can_fish = true
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact"):
+	if event.is_action_pressed("interact") && can_fish:
 		bobber.global_position = get_collision_point()
-		bobber.visible = true	
+		bobber.visible = true
+		is_fishing = true
+		bobber_withdrawn = false
+		can_fish = false
+	if event.is_action_pressed("left-click") && is_fishing:
+		bobber.global_position = rod_tip.global_position
+		is_fishing = false
+		bobber_withdrawn = true
+		can_fish = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -25,7 +36,8 @@ func _process(delta: float) -> void:
 	else:
 		range_indicator.visible = false
 		fishing_line.visible = false
-		
+	if bobber_withdrawn:
+		bobber.global_position = rod_tip.global_position
 #I deleted the fishing node 
 func update_cast():
 	fishing_line.visible = true

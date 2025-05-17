@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8a8usk5nwtjm"]
+[gd_scene load_steps=4 format=3 uid="uid://c8a8usk5nwtjm"]
 
 [ext_resource type="Texture2D" uid="uid://cifxa0qoe81ox" path="res://image/texture_04.png" id="1_c5x55"]
+[ext_resource type="PackedScene" uid="uid://8ahf676ucjig" path="res://world/Prototype/ProtoType_player.tscn" id="2_rgncg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_er17k"]
 albedo_texture = ExtResource("1_c5x55")
@@ -8,6 +9,16 @@ albedo_texture = ExtResource("1_c5x55")
 [node name="Prototype" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.264, 0, -16.8624)
 use_collision = true
-size = Vector3(20, 1, 5)
+size = Vector3(78.3689, 1, 76.5422)
 material = SubResource("StandardMaterial3D_er17k")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.6224, 51.7904, -74.6984)
+use_collision = true
+size = Vector3(27.6522, 1, 33.1398)
+material = SubResource("StandardMaterial3D_er17k")
+
+[node name="Player" parent="." instance=ExtResource("2_rgncg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.4019, 52.3404, -70.6943)
