@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm87m53e473pp"]
+
+[ext_resource type="Script" uid="uid://cmpghp5vgnqyk" path="res://workingTest/player_main_prototype.gd" id="1_4bs7r"]
+[ext_resource type="PackedScene" uid="uid://bmxgl16h42njt" path="res://workingTest/SashaProto.tscn" id="1_mowys"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yhwlh"]
+
+[node name="PlayerMainPrototype" type="CharacterBody3D"]
+script = ExtResource("1_4bs7r")
+
+[node name="PlayerCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_yhwlh")
+
+[node name="Pivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54153, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Camera3D" type="Camera3D" parent="Pivot/SpringArm3D"]
+
+[node name="Visual" type="Node3D" parent="."]
+
+[node name="On_Wall" type="RayCast3D" parent="Visual"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+target_position = Vector3(0, 0, -0.7)
+
+[node name="Still_On_Wall" type="RayCast3D" parent="Visual"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09027, 0)
+target_position = Vector3(0, 0, -0.7)
+
+[node name="Sasha" parent="Visual" instance=ExtResource("1_mowys")]
+
+[node name="Skeleton3D" parent="Visual/Sasha/Armature" index="0"]
+bones/1/position = Vector3(3.76682e-05, 0.622005, -1.69523e-05)
+bones/3/rotation = Quaternion(-2.78723e-05, -8.17419e-06, -0.000164796, 1)
+bones/4/rotation = Quaternion(0.0621745, 0.0690067, -0.559901, 0.823336)
+bones/5/rotation = Quaternion(0.849883, -0.0392769, 0.0486365, 0.523251)
+bones/6/rotation = Quaternion(-0.842361, -0.186321, -0.0372391, 0.504308)
+bones/7/rotation = Quaternion(0.140107, 0.199729, 0.855431, 0.456856)
+bones/8/rotation = Quaternion(0.582423, 0.00224643, -0.0394631, 0.811925)
+bones/9/rotation = Quaternion(-0.727011, -0.188015, -0.193588, 0.63137)
+bones/10/rotation = Quaternion(0.69862, -0.109698, -0.698273, 0.110956)
+bones/11/rotation = Quaternion(-0.00220532, 0.000716034, -0.419381, 0.907808)
+bones/12/rotation = Quaternion(0.0021112, -0.00241226, 0.872967, 0.487768)
+bones/13/rotation = Quaternion(0.600152, 0.268984, 0.639693, 0.397816)
+bones/14/rotation = Quaternion(-0.0244784, -0.00438194, 0.669437, 0.742453)
+bones/15/rotation = Quaternion(0.114469, -0.0120075, -0.850116, 0.513864)
+bones/16/position = Vector3(0.116797, 0.201265, -0.0628871)
+bones/18/position = Vector3(0.341175, 1.15403, 0.196403)
+bones/18/rotation = Quaternion(-0.0246418, -0.0246418, -0.706677, 0.706677)
+bones/19/position = Vector3(0.00671162, -0.123668, -0.395076)
+bones/20/position = Vector3(-0.175496, 0.283812, 0.0576673)
+bones/22/position = Vector3(-0.348257, 0.992535, 0.334925)
+bones/22/rotation = Quaternion(-0.0246418, 0.0246418, 0.706677, 0.706677)
+bones/23/position = Vector3(0.0236736, -0.040985, -0.211093)
+
+[node name="AnimationPlayer" parent="Visual/Sasha" index="1"]
+autoplay = "Idle"
+
+[editable path="Visual/Sasha"]

@@ -1,0 +1,108 @@
+[gd_scene load_steps=18 format=3 uid="uid://b8oxg8ass1jdf"]
+
+[ext_resource type="Texture2D" uid="uid://cifxa0qoe81ox" path="res://image/texture_04.png" id="1_3jldn"]
+[ext_resource type="Texture2D" uid="uid://ccxg5pptuthfx" path="res://image/texture_09.png" id="2_mbhu0"]
+[ext_resource type="Shader" uid="uid://hkcw6bktj2ah" path="res://shaders/MAIN_Water_Shader.tres" id="2_y8ia4"]
+[ext_resource type="Texture2D" uid="uid://bhtm4ir0nkgx2" path="res://image/texture_05.png" id="3_y8ia4"]
+[ext_resource type="PackedScene" uid="uid://dm87m53e473pp" path="res://workingTest/player_main_prototype.tscn" id="5_h2nec"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h2nec"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_jvbta"]
+sky_material = SubResource("ProceduralSkyMaterial_h2nec")
+
+[sub_resource type="Environment" id="Environment_tgv51"]
+background_mode = 2
+sky = SubResource("Sky_jvbta")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p8w1u"]
+albedo_texture = ExtResource("1_3jldn")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h2nec"]
+render_priority = 0
+shader = ExtResource("2_y8ia4")
+shader_parameter/ColorParameter = Color(0.27451, 0.33611, 0.948052, 1)
+shader_parameter/Alpha_Value = 0.8
+shader_parameter/Roughness_Value = 0.8
+
+[sub_resource type="QuadMesh" id="QuadMesh_jvbta"]
+material = SubResource("ShaderMaterial_h2nec")
+size = Vector2(6, 8)
+orientation = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y8ia4"]
+albedo_texture = ExtResource("2_mbhu0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2nec"]
+albedo_texture = ExtResource("2_mbhu0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jvbta"]
+albedo_texture = ExtResource("3_y8ia4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fvvcy"]
+albedo_texture = ExtResource("3_y8ia4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tgv51"]
+albedo_texture = ExtResource("3_y8ia4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_agua4"]
+albedo_texture = ExtResource("3_y8ia4")
+
+[node name="TestWorld" type="Node"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tgv51")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="PrototypeTerrain" type="Node3D" parent="."]
+
+[node name="Floor" type="CSGBox3D" parent="PrototypeTerrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(50, 1, 50)
+material = SubResource("StandardMaterial3D_p8w1u")
+
+[node name="Pool" type="CSGBox3D" parent="PrototypeTerrain/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026947, 0, -15.4036)
+operation = 2
+size = Vector3(6, 1, 8)
+
+[node name="WaterCol" type="CSGBox3D" parent="PrototypeTerrain/Floor/Pool"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.301215, 0)
+size = Vector3(6, 0.25, 8)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PrototypeTerrain/Floor/Pool"]
+mesh = SubResource("QuadMesh_jvbta")
+
+[node name="ClimbingWall" type="CSGBox3D" parent="PrototypeTerrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5353, 2.39624, 0)
+material_override = SubResource("StandardMaterial3D_y8ia4")
+use_collision = true
+size = Vector3(0.5, 6.34106, 10)
+material = SubResource("StandardMaterial3D_h2nec")
+
+[node name="ClimbingWallPlatform" type="CSGBox3D" parent="PrototypeTerrain/ClimbingWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7334, 2.93649, 0)
+size = Vector3(3, 0.5, 10)
+material = SubResource("StandardMaterial3D_jvbta")
+
+[node name="GliderWall" type="CSGBox3D" parent="PrototypeTerrain/ClimbingWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.99363, 0, 0)
+size = Vector3(0.5, 40, 10)
+material = SubResource("StandardMaterial3D_fvvcy")
+
+[node name="GliderPlatform" type="CSGBox3D" parent="PrototypeTerrain/ClimbingWall/GliderWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.72309, 19.8142, 0)
+material_override = SubResource("StandardMaterial3D_tgv51")
+size = Vector3(3, 0.5, 10)
+material = SubResource("StandardMaterial3D_agua4")
+
+[node name="PlayerMainPrototype" parent="." instance=ExtResource("5_h2nec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0568, -1.90735e-06, 5.67643)

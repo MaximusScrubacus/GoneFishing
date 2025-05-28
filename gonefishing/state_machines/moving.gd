@@ -12,7 +12,6 @@ var can_move = true
 
 func Enter():
 	animation_player.play("Walk")
-	particles.show()
 func Update(_delta:float):
 	if player.velocity.x == 0 and player.velocity.z == 0 and player.velocity.y == 0 and player.is_on_floor():
 		state_transition.emit(self, "Idle")
@@ -26,8 +25,9 @@ func Update(_delta:float):
 		animation_player.play("Walk")
 	move()
 func Exit():
-	animation_player.stop()
-	particles.hide()
+	pass
+	#animation_player.stop()
+	#particles.hide()
 func move():
 	var input_dir := Input.get_vector("left", "right", "up", "down") 
 	var direction := (player.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()

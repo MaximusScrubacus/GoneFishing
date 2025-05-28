@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccxg5pptuthfx"
-path.s3tc="res://.godot/imported/texture_09.png-e25d3d36dd80846b1926be68b1efbb88.s3tc.ctex"
+uid="uid://ctwxi8u70cmc4"
+path.s3tc="res://.godot/imported/Sasha_Head Base Color.png-8d639ada8ed33c7be329d335154f3e46.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "47a9463d625666dfeb2f6c3ab05e3fac"
+}
 
 [deps]
 
-source_file="res://image/texture_09.png"
-dest_files=["res://.godot/imported/texture_09.png-e25d3d36dd80846b1926be68b1efbb88.s3tc.ctex"]
+source_file="res://workingTest/Sasha_Head Base Color.png"
+dest_files=["res://.godot/imported/Sasha_Head Base Color.png-8d639ada8ed33c7be329d335154f3e46.s3tc.ctex"]
 
 [params]
 
